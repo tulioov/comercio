@@ -17,14 +17,25 @@
 <body>
 
 	<nav class="navbar nav-header navbar-light bg-dark">
-		<span class="navbar-header"> netshop </span>
-
+		<span class="navbar-header"> 
+			<h1>
+				<a class="nav-header" href="<c:url value='/pages/home.jsp'/>">netshop</a>
+			</h1>  
+		</span>
+		
+		<div class="navbar-text">
+		<c:if test="${not empty sessionScope.user}">
+			<span class="mr-4"> Seja bem vindo, ${sessionScope.user}</span>
+			<a href="<c:url value='/LogoutSrv'/>"> Logout</a>
+		</c:if>
+	
+		</div>
 	</nav>
+
+	
+
 	<script type="text/javascript"
 		src="${pagerContext.request.contextPath}/js/bootstrap.min.css"></script>
-
-
-
 
 </body>
 </html>
